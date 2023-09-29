@@ -111,6 +111,12 @@ export class HomePage implements OnInit {
             ticks: {
               stepSize: 10,
             },
+            border: {
+              display: false
+             },
+             grid: {
+              display: false
+             }
           },
           y: {
             beginAtZero: true,
@@ -118,6 +124,9 @@ export class HomePage implements OnInit {
             ticks: {
               stepSize: 1,
             },
+            border: {
+              display: false
+             },
           },
         },
         animation: {
@@ -128,13 +137,30 @@ export class HomePage implements OnInit {
           intersect: false,
         },
         plugins: {
+          legend:{
+            display: true,
+            position	:'top',
+            align: 'end',
+            labels:{
+              padding: 25,
+              textAlign: 'right',
+              font:{
+                size: 10,
+                weight: 'bold'
+              },
+              usePointStyle: true,
+              pointStyle: 'circle',
+            },
+            reverse: true,
+          },
           title: {
             display: true,
-            text: "Flixdrop Accelerometer Reading",
+            text: 'Flixdrop CHMS Collar Behaviourals',
           },
           tooltip: {
             enabled: false,
-            position: "nearest",
+            position: 'nearest',
+            usePointStyle: true,
             external: this.externalTooltipHandler,
           },
         },
